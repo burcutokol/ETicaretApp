@@ -10,10 +10,10 @@ namespace ETicaretAPI.Application.Repositories
 {
     public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
     {
-        IQueryable<T> GetAll(); //It wont fetched all data to memory(difference from INumerable), will be fetched from database
-        IQueryable<T> GetWhere(Expression<Func<T, bool>> method); //conditions will be added to db query when we used iquaryable
+        IQueryable<T> GetAll(bool tracking = true); //It wont fetched all data to memory(difference from INumerable), will be fetched from database
+        IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true); //conditions will be added to db query when we used iquaryable
         //All data wont be fetched in that way.(more efficent than inumerable or list)
-        Task<T> GetSingleAsync(Expression<Func<T, bool>> method);//first or default async
-        Task <T> GetByIdAsync(string id);
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true);//first or default async
+        Task <T> GetByIdAsync(string id, bool tracking = true);
     }
 }
