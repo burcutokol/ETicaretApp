@@ -1,5 +1,10 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
-<footer>
+<a routerLink="">Home</a> |
+<!-- this lines will go to routes.ts and will fetch from routerlink
+then after it will go to related module and will check path -->
+<a routerLink="/products">Products</a> |
+<a routerLink="/baskets">Basket</a> |
+<a routerLink="/admin">Admin</a> 
 
-</footer>
+<br>
+<!-- related components will be fetched under router outled. -->
+<router-outlet></router-outlet>
