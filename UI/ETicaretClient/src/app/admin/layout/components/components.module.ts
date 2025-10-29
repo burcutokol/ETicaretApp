@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     CommonModule,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
   ]
 })
 export class ComponentsModule { }
